@@ -153,9 +153,9 @@ namespace {
 }
 
 
-// void draw_random_things(TGAImage &picture) {
-//     draw_shadertoy(picture);
-// }
+void draw_random_things(TGAImage &picture) {
+    draw_shadertoy(picture);
+}
 
 int main() {
     const Model model(kModelPath);
@@ -178,7 +178,7 @@ int main() {
     render_model(model, framebuffer, shader);
 
     framebuffer.color.flip_vertically();
-    // draw_random_things(framebuffer.color);
+    draw_random_things(framebuffer.color);
     framebuffer.color.write_tga_file(kColorBufferTga.c_str());
     dump_depth_buffer(framebuffer.depth, kDepthBufferTga.c_str());
 
